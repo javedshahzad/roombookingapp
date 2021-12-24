@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="registerform">
+
+      <ion-item>
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input type="text" formControlName="first_name" name="first_name"></ion-input>
+      </ion-item>
+      <br>
+      <p class="error-message" *ngIf="registerform.controls['first_name'].hasError('required') && registerform.controls['first_name'].touched">
+      Your First Name is required*
+      </p>
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input type="text" formControlName="last_name" name="last_name"></ion-input>
+        </ion-item>
+        <br>
+        <p class="error-message" *ngIf="registerform.controls['last_name'].hasError('required') && registerform.controls['last_name'].touched">
+        Your Last Name is required*
+        </p>
+      <ion-item>
+        <ion-label position="floating">Your Email</ion-label>
+        <ion-input type="email" formControlName="email" name="email"></ion-input>
+      </ion-item>
+      <br>
+      <p class="error-message" *ngIf="registerform.controls['email'].hasError('required') && registerform.controls['email'].touched">
+      Your Email is required*
+      </p>
+      <p class="error-message" *ngIf="registerform.controls['email'].hasError('email') && registerform.controls['email'].touched">
+       Please enter valid email*
+        </p>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input  type="password" formControlName="password" name="password"></ion-input>
+      </ion-item>
+      <br>
+        <p class="error-message" *ngIf="registerform.controls['password'].hasError('required') && registerform.controls['password'].touched">
+          Password is required*
+        </p>     
+        <ion-button color="dark" expand="block" type="submit" [disabled]="!registerform.valid" (click)="register()">Register</ion-button>
+      </form>
+      <p style="text-align: center;" routerLink="/login">Have already an account?Click to Login</p>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Create Company</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngIf="showcompany">
+  <h1 class="hh">Create Company</h1>
+  <form [formGroup]="createcompanyform">
+      <div class="inputs">
+        <input type="text" formControlName="name"  class="inputstyle" placeholder="Enter company Name">
+      </div>
+      <p class="error-message" *ngIf="createcompanyform.controls['name'].hasError('required') && createcompanyform.controls['name'].touched">
+        Company Name is required*
+        </p>
+    <br>
+    <ion-button expand="block" type="submit" [disabled]="!createcompanyform.valid" (click)="create()">Create</ion-button>
+  </form>
+</div>
+<div *ngIf="show_secret">
+  <p class="ppp">Your Company secret code is below</p>
+  <h1 class="hh">{{comany_secret}}</h1>
+  <ion-button expand="block" (click)="join()">Click to Join</ion-button>
+</div>
+
+</ion-content>

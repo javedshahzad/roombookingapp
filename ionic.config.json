@@ -1,0 +1,7 @@
+{
+  "name": "roombooking",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

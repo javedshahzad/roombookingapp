@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{headertxt}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Create Building -->
+<div *ngIf="showcreateBuilding">
+  <h1 class="hh">{{headertxt}}</h1>
+  <form [formGroup]="addbuildingform" (ngSubmit)="createbuilding()">
+    <div class="inputs">
+      <input type="text" formControlName="name"  class="inputstyle" placeholder="Enter building Name">
+    </div>
+    <p class="error-message" *ngIf="addbuildingform.controls['name'].hasError('required') && addbuildingform.controls['name'].touched">
+      Building name is required*
+      </p>
+    <br>
+    <ion-button expand="block" shape="round" type="submit" [disabled]="!addbuildingform.valid">Create Building</ion-button>
+
+    <br>
+  </form>
+</div>
+
+<!-- Create Location -->
+
+<div *ngIf="showlocation">
+  <h1 class="hh">{{headertxt}}</h1>
+  <form [formGroup]="locationform" (ngSubmit)="createLocation()">
+    <div class="inputs">
+      <input type="text" formControlName="name"  class="inputstyle" placeholder="Enter Location Name">
+    </div>
+    <p class="error-message" *ngIf="locationform.controls['name'].hasError('required') && locationform.controls['name'].touched">
+      Location Name is required*
+      </p>
+    <br>
+    <ion-button expand="block"  type="submit" [disabled]="!locationform.valid">Create Location</ion-button>
+  </form>
+</div>
+
+<!-- Create Place -->
+
+<div *ngIf="showplace">
+  <h1 class="hh">{{headertxt}}</h1>
+  <form [formGroup]="placeform" (ngSubmit)="createplace()">
+    <div class="inputs">
+      <input type="text" formControlName="name" class="inputstyle" placeholder="Enter Place Name">
+    </div>
+    <p class="error-message" *ngIf="placeform.controls['name'].hasError('required') && placeform.controls['name'].touched">
+      Place Name is required*
+      </p>
+    <br>
+    <ion-button expand="block" type="submit" [disabled]="!placeform.valid">Create Place</ion-button>
+  </form>
+</div>
+</ion-content>

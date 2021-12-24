@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginform">
+    <ion-item>
+      <ion-label position="floating">Your Email</ion-label>
+      <ion-input type="email" formControlName="email" name="email"></ion-input>
+    </ion-item>
+    <br>
+    <p class="error-message" *ngIf="loginform.controls['email'].hasError('required') && loginform.controls['email'].touched">
+    Your Email is required*
+    </p>
+    <p class="error-message" *ngIf="loginform.controls['email'].hasError('email') && loginform.controls['email'].touched">
+     Please enter valid email*
+      </p>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input  type="password" formControlName="password" name="password"></ion-input>
+    </ion-item>
+    <br>
+      <p class="error-message" *ngIf="loginform.controls['password'].hasError('required') && loginform.controls['password'].touched">
+        Password is required*
+      </p>     
+      <ion-button color="dark" expand="block" type="submit" [disabled]="!loginform.valid" (click)="login()">Login</ion-button>
+    </form>
+    <p style="text-align: center;" routerLink="/registration">Have not account?Click to Register</p>
+</ion-content>

@@ -1,0 +1,36 @@
+ion-content{
+    --background: #1c1b2d;
+}
+ion-toolbar{
+    --background: #1c1b2d;
+    color: #fff;
+}
+.hh{
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+.inputs .label{
+    color: #fff;
+    text-align: start;
+    font-size: 14px;
+    margin-left: 5px;;
+}
+.inputs .inputstyle{
+    height: 40px;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+    border: none;
+    background: #FFF;
+    font-size: 20px;
+    color: #1c1b2d;
+    padding-left: 10px;
+}
+.error-message {
+    color: var(--ion-color-danger);
+    text-align: center;
+  }

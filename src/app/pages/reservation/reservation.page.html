@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Book Reservation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-icon name="add-outline" slot="start" class="icon"></ion-icon>
+    <ion-label>
+      <p  class="icon">Building: {{buildingname}}</p>
+      <p  class="icon">Location: {{locationName}}</p>
+      <p  class="icon">Place: {{placeName}}</p>
+    </ion-label>
+  </ion-item>
+  <form [formGroup]="reservationform">
+    <div class="inputs">
+      <p for="" class="label">From</p>
+      <input type="datetime-local" formControlName="from" class="inputstyle" placeholder="Enter company from code">
+    </div>
+    <p class="error-message" *ngIf="reservationform.controls['from'].hasError('required') && reservationform.controls['from'].touched">
+      Your from number is required*
+      </p>
+    <br>
+    <div class="inputs">
+      <p for="" class="label">To</p>
+      <input type="datetime-local" formControlName="to" class="inputstyle" placeholder="Enter company to code">
+    </div>
+    <p class="error-message" *ngIf="reservationform.controls['to'].hasError('required') && reservationform.controls['to'].touched">
+      Your to number is required*
+      </p>
+    <br>
+    <ion-button expand="block" type="submit" [disabled]="!reservationform.valid" (click)="createreservation()">Add booking</ion-button>
+  </form>
+
+
+</ion-content>

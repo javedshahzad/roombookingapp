@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Join Company</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 class="hh">Join Company</h1>
+  <form [formGroup]="joinform">
+    <div class="inputs">
+      <input type="text" formControlName="secret"  class="inputstyle" placeholder="Enter company Secret code">
+    </div>
+    <p class="error-message" *ngIf="joinform.controls['secret'].hasError('required') && joinform.controls['secret'].touched">
+      Your Secret number is required*
+      </p>
+    <br>
+    <ion-button expand="block" type="submit" [disabled]="!joinform.valid" (click)="join()">Join</ion-button>
+  </form>
+</ion-content>
