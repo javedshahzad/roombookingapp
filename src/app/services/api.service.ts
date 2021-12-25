@@ -23,7 +23,7 @@ export class ApiService {
     let header = new HttpHeaders();
     header = header.set("authorization", "Bearer "+this.userToken);
     header = header.set("Content-Type", "application/json; charset=utf-8");
-    return this.http.get(this.baseUrl + url, { headers: header });
+    return this.http.get(this.baseUrl + url + "?cache=false", { headers: header });
   }
 
   DeleteDataWithToken(data) {
