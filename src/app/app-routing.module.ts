@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/joincompany/joincompany.module').then( m => m.JoincompanyPageModule)
   },
   {
-    path: 'buildings',
+    path: 'home',
     loadChildren: () => import('./pages/buildings/buildings.module').then( m => m.BuildingsPageModule)
   },
   {
@@ -44,11 +44,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/addlocation/addlocation.module').then( m => m.AddlocationPageModule)
   },
   {
-    path: 'allocations',
+    path: 'building/:id',
     loadChildren: () => import('./pages/allocations/allocations.module').then( m => m.AllocationsPageModule)
   },
   {
-    path: 'places',
+    path: 'location/:id',
     loadChildren: () => import('./pages/places/places.module').then( m => m.PlacesPageModule)
   },
   {
@@ -56,7 +56,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/reservation/reservation.module').then( m => m.ReservationPageModule)
   },
   {
-    path: 'allreservation',
+    path: 'place/:id',
     loadChildren: () => import('./pages/allreservation/allreservation.module').then( m => m.AllreservationPageModule)
   },
   {

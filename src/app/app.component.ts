@@ -7,7 +7,7 @@ import { MenuController, NavController } from '@ionic/angular';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'All Buildings', url: '/buildings', icon: 'mail' },
+    { title: 'Home', url: '/home', icon: 'mail' },
     { title: 'Add/Join Company', url: '/company', icon: 'mail' },
     { title: 'Add Building', url: '/addbuilding', icon: 'paper-plane' },
     { title: 'All Locations', url: '/allocations', icon: 'heart' },
