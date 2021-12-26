@@ -14,14 +14,14 @@
       <ion-icon name="add-outline" slot="start" class="icon"></ion-icon>
       <ion-label>
         <p  class="icon">Location: {{item.name}}</p>
-        <p  class="icon">Building ID: {{item.building}}</p>
+        <p  class="icon">Building: {{item.building.name}}</p>
       </ion-label>
       <ion-icon class="icon" name="trash" slot="end" (click)="delete(item.id)"></ion-icon>
       <ion-icon name="people" slot="end"  class="icon"></ion-icon>
       <ion-icon  name="chevron-forward" slot="end"  class="icon" (click)="places(item)"></ion-icon>
     </ion-item>
   </div>
-  
+
 </ion-content>
 <!-- <ion-footer>
   <div class="circle" routerLink="/addbuilding"><ion-icon name="add-outline"></ion-icon></div>

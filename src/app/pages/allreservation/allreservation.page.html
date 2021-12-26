@@ -13,16 +13,15 @@
     <ion-item>
       <!-- <ion-icon name="add-outline" slot="start" class="icon"></ion-icon> -->
       <ion-label>
-        <p  class="icon2">From: {{ item.from | date:'short' }}</p>
-        <p  class="icon2">To: {{ item.to | date:'short' }}</p>
-        <p  class="icon2">Date: {{item.date}}</p>
+        <p  class="icon2">{{item.date  | date: 'EEEE' }}</p>
+        <p  class="icon2">{{item.date  | date: 'dd.MM.yyyy' }}</p>
       </ion-label>
       <ion-icon class="icon" name="trash" slot="end" (click)="delete(item.id)"></ion-icon>
       <ion-icon name="people" slot="end"  class="icon"></ion-icon>
       <!-- <ion-icon  name="chevron-forward" slot="end"  class="icon" (click)="places(item)"></ion-icon> -->
     </ion-item>
   </div>
-  
+
 </ion-content>
 <!-- <ion-footer>
   <div class="circle" routerLink="/addbuilding"><ion-icon name="add-outline"></ion-icon></div>
