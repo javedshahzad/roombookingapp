@@ -52,11 +52,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/places/places.module').then( m => m.PlacesPageModule)
   },
   {
+    path: 'place/:id',
+    loadChildren: () => import('./pages/places/places.module').then( m => m.PlacesPageModule) //@ todo create page displaying all informations about one place
+  },
+  {
     path: 'reservation',
     loadChildren: () => import('./pages/reservation/reservation.module').then( m => m.ReservationPageModule)
   },
   {
-    path: 'place/:id',
+    path: 'reservations',
     loadChildren: () => import('./pages/allreservation/allreservation.module').then( m => m.AllreservationPageModule)
   },
   {

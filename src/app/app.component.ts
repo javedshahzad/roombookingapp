@@ -10,9 +10,7 @@ export class AppComponent {
     { title: 'Home', url: '/home', icon: 'mail' },
     { title: 'Add/Join Company', url: '/company', icon: 'mail' },
     { title: 'Add Building', url: '/addbuilding', icon: 'paper-plane' },
-    { title: 'All Locations', url: '/allocations', icon: 'heart' },
-    { title: 'All Places', url: '/places', icon: 'archive' },
-    { title: 'MY bookings', url: '/allreservation', icon: 'trash' },
+    { title: 'Reservations', url: '/reservations', icon: 'trash' },
     { title: 'Profile', url: '/profile', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

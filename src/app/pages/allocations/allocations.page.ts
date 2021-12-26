@@ -31,7 +31,7 @@ export class AllocationsPage implements OnInit {
   places(item){
     localStorage.setItem("LocationID",item.id);
     localStorage.setItem("locationName",item.name);
-    this.nav.navigateForward("places");
+    this.nav.navigateForward("place");
 
   }
 }

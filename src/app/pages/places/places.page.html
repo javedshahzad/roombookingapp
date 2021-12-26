@@ -9,16 +9,16 @@
 
 <ion-content>
 
-  <div class="items" *ngFor="let item of allplaces">
-    <ion-item>
+  <div class="items" *ngFor="let place of allplaces">
+    <ion-item href="/place/{{place.id}}">
       <ion-icon name="add-outline" slot="start" class="icon"></ion-icon>
       <ion-label>
-        <p  class="icon">Location: {{item.name}}</p>
-        <p  class="icon">Building: {{item.location.name}}</p>
+        <p  class="icon">Location: {{place.name}}</p>
+        <p  class="icon">Building: {{place.location.name}}</p>
       </ion-label>
-      <ion-icon class="icon" name="trash" slot="end" (click)="delete(item.id)"></ion-icon>
+      <ion-icon class="icon" name="trash" slot="end" (click)="delete(place.id)"></ion-icon>
       <ion-icon name="people" slot="end"  class="icon"></ion-icon>
-      <ion-icon  name="chevron-forward" slot="end"  class="icon" (click)="reservation(item)"></ion-icon>
+      <ion-icon  name="chevron-forward" slot="end"  class="icon" (click)="reservation(place)"></ion-icon>
     </ion-item>
   </div>
 
