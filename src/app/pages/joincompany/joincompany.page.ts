@@ -29,14 +29,14 @@ export class JoincompanyPage implements OnInit {
   join(){
     this.utils.startloading();
     console.log(this.joinform.value)
-    this.api.PatchDataWithToken("content/company",this.joinform.value).subscribe((res:any)=>{
+    this.api.patchDataWithToken("content/company",this.joinform.value).subscribe((res:any)=>{
       console.log(res);
       if(res.id){
         localStorage.setItem("companyID",res.id);
         this.utils.dismisloading();
         this.utils.toast("Join Company successfully","success");
         localStorage.setItem("secret","");
-        this.nav.navigateForward("buildings");
+        this.nav.navigateForward("/");
       }else{
         this.utils.dismisloading();
         this.utils.toast("Invalid or unknown company secret Code","danger");

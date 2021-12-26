@@ -30,7 +30,7 @@ export class AllreservationPage implements OnInit {
     })
   }
   getallplace(){
-    this.api.getDataWithToken("https://office-api.amicaldo.net/wp-json/api/v1/content/place?location=272").subscribe((res:any)=>{
+    this.api.getDataWithToken("content/place").subscribe((res:any)=>{
     console.log(res);
     //var combinedArray = array1.concat(array2);
     })

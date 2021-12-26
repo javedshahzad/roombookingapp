@@ -18,20 +18,20 @@ export class ApiService {
   postData(url, data) {
     return this.http.post(this.baseUrl + url, data);
   }
-  getDataWithToken(url) {
+  getDataWithToken(url, queryParameter = "") {
     this.userToken=localStorage.getItem("token");
     let header = new HttpHeaders();
     header = header.set("authorization", "Bearer "+this.userToken);
     header = header.set("Content-Type", "application/json; charset=utf-8");
-    return this.http.get(this.baseUrl + url + "?cache=false", { headers: header });
+    return this.http.get(this.baseUrl + url + "?cache=false" + queryParameter, { headers: header });
   }
 
-  DeleteDataWithToken(data) {
+  deleteDataWithToken(url) {
     this.userToken=localStorage.getItem("token");
     let header = new HttpHeaders();
     header = header.set("authorization", "Bearer "+this.userToken);
     header = header.set("Content-Type", "application/json; charset=utf-8");
-    return this.http.delete(this.baseUrl + 'content/building?d=1'+data, { headers: header });
+    return this.http.delete(this.baseUrl + url + "?cache=false", { headers: header });
   }
 
   postDataWithToken(url, data) {
@@ -41,8 +41,9 @@ export class ApiService {
     header = header.set("Content-Type", "application/json; charset=utf-8");
     return this.http.post(this.baseUrl + url, data, { headers: header });
   }
-  PatchDataWithToken(url, data) {
-    this.userToken=localStorage.getItem("token");
+
+  patchDataWithToken(url, data) {
+    this.userToken = localStorage.getItem("token");
     let header = new HttpHeaders();
     header = header.set("authorization", "Bearer "+this.userToken);
     header = header.set("Content-Type", "application/json; charset=utf-8");

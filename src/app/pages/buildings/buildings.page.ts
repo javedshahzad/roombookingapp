@@ -18,13 +18,13 @@ export class BuildingsPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getuser();
+    this.getUser();
     this.getallBuildings();
     // this.getcompany();
     // this.getlocations();
     // this.getplaces();
   }
-  getuser(){
+  getUser(){
     this.api.getDataWithToken("users/me").subscribe((res:any)=>{
       console.log(res);
     })
@@ -33,11 +33,12 @@ export class BuildingsPage implements OnInit {
 
   getallBuildings(){
     this.utils.startloading();
-    this.api.getDataWithToken("content/building?d=1").subscribe((res:any)=>{
+    this.api.getDataWithToken("content/building").subscribe((res:any)=>{
       console.log(res);
       this.utils.dismisloading();
       this.allbuildings=res;
       if(this.allbuildings.length == 0){
+        //@ todo display in UI
         this.utils.toast("No building yet! Please add new building","danger")
       }
     })
@@ -64,11 +65,12 @@ export class BuildingsPage implements OnInit {
       "id": id,
     }
     console.log(data);
-    this.api.DeleteDataWithToken(data).subscribe((res:any)=>{
+    this.api.deleteDataWithToken(data).subscribe((res:any)=>{
       console.log(res)
     })
   }
   location(item){
+    // @ todo remove this state
     localStorage.setItem("buildingID",item.id);
     localStorage.setItem("buildingName",item.name);
     this.nav.navigateForward("allocations");
