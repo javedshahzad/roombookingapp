@@ -10,8 +10,8 @@
 <ion-content>
 
   <div class="items" *ngFor="let location of alllocation">
-    <ion-item href="/location/{{location.id}}">
-      <ion-icon name="add-outline" slot="start" class="icon"></ion-icon>
+    <ion-item routerLink="/location/{{location.id}}">
+      <ion-icon name="eye-outline" slot="start" class="icon"></ion-icon>
       <ion-label>
         <p  class="icon">Location: {{location.name}}</p>
         <p  class="icon">Building: {{location.building.name}}</p>
@@ -23,6 +23,6 @@
   </div>
 
 </ion-content>
-<!-- <ion-footer>
-  <div class="circle" routerLink="/addbuilding"><ion-icon name="add-outline"></ion-icon></div>
-</ion-footer> -->
+ <ion-footer>
+  <div class="circle" routerLink="/add/building/12/location"><ion-icon name="add-outline"></ion-icon></div>
+</ion-footer>

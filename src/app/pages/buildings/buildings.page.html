@@ -11,7 +11,7 @@
 
   <ion-list class="items" *ngFor="let building of allbuildings">
     <ion-item-sliding>
-      <ion-item href="/building/{{building.id}}">
+      <ion-item routerLink="/building/{{building.id}}">
         <ion-label>{{building.name}}</ion-label>
       </ion-item>
 

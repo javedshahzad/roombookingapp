@@ -8,8 +8,6 @@ import { MenuController, NavController } from '@ionic/angular';
 export class AppComponent {
   public appPages = [
     { title: 'Home', url: '/home', icon: 'mail' },
-    { title: 'Add/Join Company', url: '/company', icon: 'mail' },
-    { title: 'Add Building', url: '/addbuilding', icon: 'paper-plane' },
     { title: 'Reservations', url: '/reservations', icon: 'trash' },
     { title: 'Profile', url: '/profile', icon: 'warning' },
   ];
@@ -19,11 +17,11 @@ export class AppComponent {
     private menu : MenuController
   ) {
 
-    // if(localStorage.getItem("token")){
-    //   this.nav.navigateForward("buildings")
-    // }else{
-    //   this.nav.navigateForward("login")
-    // }
+     if(localStorage.getItem("token")){
+       this.nav.navigateForward("buildings")
+     }else{
+       this.nav.navigateForward("login")
+     }
   }
   logout(){
     localStorage.clear();
